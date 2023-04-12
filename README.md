@@ -4,6 +4,7 @@ Health-GPT is an iOS chat app that uses a GPT model to provide health-related an
 
 [![](https://github.com/dhairyachandra/Health-GPT/blob/main/Screenshots/App_Screens.png)](https://github.com/dhairyachandra/Health-GPT/blob/main/Screenshots/App_Screens.png)
 
+Blog: [Health-GPT: An iOS App Powered by OpenAI](https://medhairya.com/health-gpt/)
 
 ## Features
 - Easy to use chat interface.
