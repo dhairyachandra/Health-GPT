@@ -1,6 +1,10 @@
 # Health-GPT
 Health-GPT is an iOS chat app that uses a GPT model to provide health-related answers. The app is built with Swift and uses the OpenAI GPT-3 API to generate responses to user queries. This repository contains the source code for the iOS app.
 
+
+[![](https://github.com/dhairyachandra/Health-GPT/blob/main/Screenshots/App_Screens.png)](https://github.com/dhairyachandra/Health-GPT/blob/main/Screenshots/App_Screens.png)
+
+
 ## Features
 - Easy to use chat interface.
 - Provides health-related answers.
