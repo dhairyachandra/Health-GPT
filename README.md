@@ -8,7 +8,7 @@ Health-GPT is an iOS chat app that uses a GPT model to provide health-related an
 
 ## Installation
 To use the app, you will need an API key from OpenAI. Once you have the API key, you can replace the YOUR_API_KEY constant in the 
-***"Health-GPT/HealthGPT/Constants.swift"*  **file with your own key.
+**"Health-GPT/HealthGPT/Constants.swift"** file with your own key.
 
 
 `static let openAIAPIKey = "[ENTER API KEY]"`
