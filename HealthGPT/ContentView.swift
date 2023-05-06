@@ -13,63 +13,76 @@ struct ContentView: View {
     @State var messageText: String = ""
     let openAIService = OpenAIService()
     @State var cancellables = Set <AnyCancellable>()
+    @AppStorage("isDarkMode") private var isDarkMode = false
     var body: some View {
-        VStack{
-            if chatMessage.isEmpty {
-                Text("Welcome to Health GPT!")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                Text("HealthGPT is an innovative app that utilizes the power of GPT-3.5 language model to answer health-related questions. This app allows users to ask any health-related question they may have, and the advanced AI system will provide them with accurate and reliable answers. With HealthGPT, users can get instant access to credible health information without the need to consult a doctor or conduct lengthy research.")
-                    .font(.body)
-                    .foregroundColor(.gray)
-                    
-                    .multilineTextAlignment(.center)
-                    .padding()
-            } else {
-                ScrollView{
-                    LazyVStack {
-                        ForEach(chatMessage, id: \.id) { message in
-                            messageView(message: message)
+        NavigationView {
+            VStack{
+                if chatMessage.isEmpty {
+                    HStack {
+                        Spacer()
+                        Text("Welcome to Health GPT!")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(isDarkMode ? .white : .black)
+                            .multilineTextAlignment(.center)
+                        .padding()
+                        Toggle("", isOn: $isDarkMode)
+                            .toggleStyle(CustomToggleStyle())
+                    }
+                    Text("HealthGPT is an innovative app that utilizes the power of GPT-3.5 language model to answer health-related questions. This app allows users to ask any health-related question they may have, and the advanced AI system will provide them with accurate and reliable answers. With HealthGPT, users can get instant access to credible health information without the need to consult a doctor or conduct lengthy research.")
+                        .font(.body)
+                        .foregroundColor(.gray)
+                        
+                        .multilineTextAlignment(.center)
+                        .padding()
+                } else {
+                    HStack {
+                        Toggle("", isOn: $isDarkMode)
+                            .toggleStyle(CustomToggleStyle())
+                        Spacer()
+                    }
+                    ScrollView{
+                        LazyVStack {
+                            ForEach(chatMessage, id: \.id) { message in
+                                messageView(message: message)
+                            }
                         }
                     }
                 }
-            }
-            Spacer()
-            HStack{
-                Button {
-                    clearMessages()
-                } label: {
-                    Text("Clear")
-                        .foregroundColor(.white)
+                Spacer()
+                HStack{
+                    Button {
+                        clearMessages()
+                    } label: {
+                        Text("Clear")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(.red)
+                            .cornerRadius(12)
+                    }
+                    TextField("Ask Health GPT!", text: $messageText){
+                        
+                    }
                         .padding()
-                        .background(.red)
+                        .background(.gray.opacity(0.1))
                         .cornerRadius(12)
+                    Button {
+                        sendMessage()
+                        
+                    } label: {
+                        Text("Send")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(.black)
+                            .cornerRadius(12)
+                    }
                 }
-                TextField("Ask Health GPT!", text: $messageText){
-                    
-                }
-                    .padding()
-                    .background(.gray.opacity(0.1))
-                    .cornerRadius(12)
-                Button {
-                    sendMessage()
-                    
-                } label: {
-                    Text("Send")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(.black)
-                        .cornerRadius(12)
-                }
+                
             }
             
-        }
         .padding()
-        
-        
+        }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 
     func clearMessages() {
