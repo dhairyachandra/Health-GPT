@@ -19,6 +19,7 @@
 		438364C629C1977400C5EF36 /* HealthGPTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438364C529C1977400C5EF36 /* HealthGPTUITestsLaunchTests.swift */; };
 		438364D529C197CA00C5EF36 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438364D329C197C900C5EF36 /* HealthKit.framework */; };
 		438364D629C197CA00C5EF36 /* HealthKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438364D429C197C900C5EF36 /* HealthKitUI.framework */; };
+		CC18C7092A06C44300249261 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18C7082A06C44300249261 /* CustomToggle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		438364C529C1977400C5EF36 /* HealthGPTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGPTUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		438364D329C197C900C5EF36 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		438364D429C197C900C5EF36 /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = System/Library/Frameworks/HealthKitUI.framework; sourceTree = SDKROOT; };
+		CC18C7082A06C44300249261 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				438364A829C1977200C5EF36 /* HealthGPTApp.swift */,
 				438364AA29C1977200C5EF36 /* ContentView.swift */,
+				CC18C70A2A06C66E00249261 /* Styles */,
 				438364AC29C1977400C5EF36 /* Assets.xcassets */,
 				438364AE29C1977400C5EF36 /* Preview Content */,
 				4312B7AC29C2B9E7001BA9CC /* Constants.swift */,
@@ -149,6 +152,14 @@
 				438364D429C197C900C5EF36 /* HealthKitUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC18C70A2A06C66E00249261 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				CC18C7082A06C44300249261 /* CustomToggle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 			files = (
 				438364AB29C1977200C5EF36 /* ContentView.swift in Sources */,
 				438364A929C1977200C5EF36 /* HealthGPTApp.swift in Sources */,
+				CC18C7092A06C44300249261 /* CustomToggle.swift in Sources */,
 				4312B7AD29C2B9E7001BA9CC /* Constants.swift in Sources */,
 				4312B7AF29C2BA3B001BA9CC /* OpenAIService.swift in Sources */,
 			);
